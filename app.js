@@ -11,7 +11,16 @@ const directorRouter = require('./routes/director');
 const app = express();
 
 // db connection
-const db = require('./helper/db.js')();
+const db = require('./app/helper/db.js')();
+
+// config file
+const config = require('./app/config/config');
+// assign as global variable
+app.set('API_SECRET_KEY', config.api_secret_key);
+app.set('API_TOKEN_LIFETIME', config.token_lifetime);
+
+// middleware
+const verifyToken = require('./app/middleware/verify-token');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -24,6 +33,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/api', verifyToken); // api url i içeren tüm endpointlere bu middleware uygulanıyor.
 app.use('/api/movies/', movieRouter);
 app.use('/api/directors/', directorRouter);
 

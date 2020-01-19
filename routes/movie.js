@@ -23,6 +23,7 @@ router.get('/', (req, res, next) => {
    );
 
     promise.then((data) => {
+        console.log(req.decode);
         res.json(data);
     }).catch((err) => {
         res.json(err);

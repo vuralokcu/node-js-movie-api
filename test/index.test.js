@@ -7,7 +7,7 @@ chai.use(chaiHttp); // node node_modules/mocha/bin/mocha komutu ile çalıştır
 
 // test açıklaması
 describe('Node Server', () => {
-    it('(GET /) anasayfayı döndürür', (done) => { // Herhangi bir unit test elemanıdır.
+    it('(GET /) returns the home page', (done) => { // Herhangi bir unit test elemanıdır.
         chai.request(server)
             .get('/')
             .end((err, res) => {

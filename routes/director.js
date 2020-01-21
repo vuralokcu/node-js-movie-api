@@ -121,7 +121,8 @@ router.get('/:director_id', (req, res, next) => {
                         _id: '$_id',
                         name: '$name',
                         surname: '$surname',
-                        bio: '$bio'
+                        bio: '$bio',
+                        created_at: '$created_at'
                     },
                     movies: {
                         $push: '$movie'
@@ -134,6 +135,7 @@ router.get('/:director_id', (req, res, next) => {
                     name: '$_id.name',
                     surname: '$_id.surname',
                     bio: '$_id.bio',
+                    created_at: '$_id.created_at',
                     movies: '$movies'
                 }
             }

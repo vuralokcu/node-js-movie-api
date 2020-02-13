@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node ./bin/www",
     "start:dev": "nodemon ./bin/www",
-    "test": "mocha --recursive --timeout 10000"
+    "test": "mocha --recursive --timeout 10000 --exit"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

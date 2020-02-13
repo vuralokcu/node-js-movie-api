@@ -1,3 +1,5 @@
+[![Build status](https://api.travis-ci.com/vuralokcu/node-js-movie-api.svg?branch=master)](https://travis-ci.com/vuralokcu/node-js-movie-api)
+
 # node-js-movie-api
 Node.JS Movie API
 
